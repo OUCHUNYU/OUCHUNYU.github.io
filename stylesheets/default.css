@@ -77,6 +77,9 @@ hr {
 .nav-1 a:hover {
   background-color: #e6e6e6;
 }
+.nav-1 a:visited {
+  color: black;
+}
 
 
 /*                  Main
