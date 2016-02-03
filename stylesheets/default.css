@@ -115,6 +115,9 @@ hr {
 .nav-2 a:hover {
   background-color: orange;
 }
+.nav-2 a:visited {
+  color: black;
+}
 
 
 
