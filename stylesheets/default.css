@@ -1,0 +1,137 @@
+/** {
+  border: 2px dashed black;
+}*/
+body {
+  margin-bottom: -5px;
+}
+
+
+/*                  HEADER
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+header {
+  background-color: #f2f2f2;
+  margin-top: -20px;
+  margin-right: -8px;
+  margin-left: -8px;
+  margin-bottom: -25px;
+  position: relative;
+  padding-bottom: 170px;
+  /*border: 2px dashed black;*/
+}
+
+header div {
+  position: absolute;
+  width: 300px;
+  margin-top: 70px;
+  margin-left: 160px;
+}
+
+.avatar {
+  position: absolute;
+  margin-top: 33px;
+  margin-left: 45px;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+
+}
+
+.avatar img {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  border: 3px solid #bfbfbf;
+}
+
+.name {
+  font-size: 2em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.name:hover {
+  color: #2481ff;
+}
+
+a:visited {
+  color: #000000;
+}
+
+hr {
+  border: 2px solid black;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.nav-1 a {
+  border-radius: 10px;
+  margin-left: 60px;
+  margin-bottom: 40px;
+  display: inline-block;
+  padding: 30px;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+
+}
+.nav-1 a:hover {
+  background-color: #e6e6e6;
+}
+
+
+/*                  Main
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.main-section {
+  /*border: 2px dashed black;*/
+  margin: 40px;
+}
+
+
+
+.main-section h3 {
+  font-size: 1.5em;
+}
+
+.main-section a {
+  text-decoration: none;
+  font-size: 1.25em;
+}
+.main-section a:visited {
+  color: #0000ff;
+}
+
+.nav-2 a {
+  /*border: 2px solid #b3b3b3;*/
+  display: inline-block;
+  padding: 20px;
+  margin-left: 150px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: #b3ecff;
+}
+.nav-2 a:hover {
+  background-color: orange;
+}
+
+
+
+/*                  Footer
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+footer {
+  padding: 50px;
+  background-color: #2a2a2a;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+footer p {
+  color: #ffffff;
+}
+
+footer a {
+  color: #ffffff;
+}
