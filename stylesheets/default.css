@@ -1,6 +1,12 @@
 /** {
   border: 2px dashed black;
 }*/
+.wrapper {
+  margin: -8px auto;
+  width: 98%;
+  color:black;
+}
+
 body {
   margin-bottom: -5px;
 }
@@ -10,13 +16,13 @@ body {
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 header {
   background-color: #f2f2f2;
-  margin-top: -20px;
-  margin-right: -8px;
-  margin-left: -8px;
-  margin-bottom: -25px;
+  margin-top: -1.594387755102041%;
+  margin-right: -0.63775510204081625%;
+  margin-left: -0.63775510204081625%;
+  margin-bottom: -1.992984693877551%;
   position: relative;
-  padding-bottom: 170px;
-  /*border: 2px dashed black;*/
+  padding-bottom: 13.552295918367346%;
+
 }
 
 header div {
@@ -65,10 +71,10 @@ hr {
 
 .nav-1 a {
   border-radius: 10px;
-  margin-left: 60px;
-  margin-bottom: 40px;
+  margin-left: 5.5803571428571425%;
+  margin-bottom: 3.188775510204082%;
   display: inline-block;
-  padding: 30px;
+  padding: 2.391581632653061%;
   text-decoration: none;
   font-size: 1.5em;
   font-weight: bold;
@@ -87,7 +93,7 @@ hr {
 
 .main-section {
   /*border: 2px dashed black;*/
-  margin: 40px;
+  margin: 3.188775510204082%;
 }
 
 
@@ -107,10 +113,10 @@ hr {
 .nav-2 a {
   /*border: 2px solid #b3b3b3;*/
   display: inline-block;
-  padding: 20px;
-  margin-left: 150px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding: 1.594387755102041%;
+  margin-left: 11.957908163265306%;
+  margin-top: 2.391581632653061%;
+  margin-bottom: 2.391581632653061%;
   text-decoration: none;
   border-radius: 10px;
   background-color: #b3ecff;
@@ -128,10 +134,10 @@ hr {
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 footer {
-  padding: 50px;
+  padding: 3.985969387755102%;
   background-color: #2a2a2a;
-  margin-left: -8px;
-  margin-right: -8px;
+  margin-left: -0.63775510204081625%;
+  margin-right: -0.63775510204081625%;
 }
 
 footer p {
