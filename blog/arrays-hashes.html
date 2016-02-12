@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <title>Arrays|Hashes</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="avatar">
+        <img src="../imgs/web-header-img.png">
+      </div>
+      <div>
+        <a  class="name" href="index.html">Chunyu Ou<a>
+      </div>
+    </header>
+    <br>
+    <hr>
+
+    <nav class="blog-nav">
+      <a href="#">Portfolio</a>
+      <a href="#">Projects</a>
+      <a href="#">About Me</a>
+      <a href="index.html">Blog</a>
+    </nav>
+
+
+    <section class="main-section">
+      <section>
+        <hr>
+        <h1>Arrays vs. Hashes</h1>
+        <P>In our DBC learning week 4, we started our Ruby study. As one of the most dynamic programming language, certainly there a lot of things going on behind the code. As this is our first week on Ruby basic syntax and iteration. It's time to reflect on what i have learned on this topic.
+Whatever i want to dig, i always go to their libraries, here is what i found for Array and Hash</p>
+        <p><em>Arrays</em>: Arrays are ordered, integer-indexed collections of any object.This was the first sentence when you go rubydoc. In which i think it's well informative. It's purpose is to store objects, and pretty much more than 99% of stuff in Ruby are objects. So it is an everything collection. The difference is they store objects in an integer indexed order, starts from 0, from left to right. The last object in the collection is indexed -1, from right to left, it goes -2, -3, -4 and so on. We can also access a specific object inside an array by its index. Example:</p>
+        <code>
+          arr = ["Ruby", "Phython", "Java", "JavaScript"]<br>
+          puts arr[0]<br><br>
+
+          > Ruby # Interpreter returns the frist element in the arr.
+        </code>
+        <p>This gives us the freedom of accessing the objects in an array. There are many build in methods to allow us to manipulate and iterate an array with ease. Because of there features, array is one of the best way to store data. You can create a new array by directly assign a pair of [ ] to a variable. You can also use Array class to generate a new array, it comes with some cool feature in creating new array this way and some weird things as well. See code below:</p>
+        <code>
+        # This is an empty array.<br>
+        arr = []<br><br>
+         # We can store many different type of data, even some arrays, because they are all objects in Ruby.<br>
+         long_arr = [1, 'ruby', :ruby, a_method_name, ['another', 'array']]  <br><br>
+         # This creates an empty array as well<br>
+         arr_obj = Array.new<br><br>
+
+         # Note the reason why this happens because Array.new method takes integer arugment and a block behind it. The integer tells Ruby how many times we need to execute the block. In our code we did not specify a block so it returns nil for 5 times.<br>
+
+         arr_nils = Array.new(5) # This creates something like [nil, nil, nil, nil, nil]<br>
+
+        </code>
+
+        <p><em>Hashes</em>: A Hash is a dictionary-like collection of unique keys and their values. Also called associative arrays, they are similar to Arrays, but where an Array uses integers as its index, a Hash allows you to use any object type. Hashes enumerate their values in the order that the corresponding keys were inserted. Like Ruby documentation says the arrys are some sort of arrays, this probobly sounds confusing but they are kind of related. One thing noticable that in Hash library, there is a method to alter an hash to an array:</p>
+        <code>
+            h = { "c" => 300, "a" => 100, "d" => 400, "c" => 300  }<br>
+            h.to_a  <br>
+             #=> [["c", 300], ["a", 100], ["d", 400]]
+        </code>
+        <p>Hashes are particularly useful when we need to store or access data with unique identifiers as keys. A Hash object is constructed with a key value pairs within curly brackets like the code below, and their keys are symbols, values can be any object.</p>
+        <code>
+          # This is a simple hash object.<br>
+          hash_1 = { ruby: "Fun", phython: "Fun, too", java: "Awesome", javascript: "I don't know"}<br><br>
+          # NOTE one thing in Ruby dynamic syntax we can omit { } like:<br>
+          hash_1 = ruby: "Fun", phython: "Fun, too", java: "Awesome", javascript: "I don't know"<br><br>
+          # To access a hash value we can do a similar syntax as arrays.<br>
+          hash_1[:ruby] # This returns "Fun"<br><br>
+        </code>
+        <p>Most of Hash and Array iterations are done by iterator methods, which inherited from Enumerator module, there is a set of hierarchy in between many classes and modules we can have them explained in future blog posts.</p>
+        <p>Ruby's dynamic feature is one of the most important key of its popularity. With this we can define methods, create personal DSLs, build Ruby gems, implimenting frameworks in a dynamic, creative ways. Happy Coding.</p>
+      </section>
+    </section>
+
+    <div class="back-forth">
+      <a href="css-concepts.html">Previous</a>
+      <a id="back-forth-2" href="#">Next</a>
+    </div>
+
+    <footer>
+      <p>Posted by: Chunyu Ou</p>
+      <P>Posted date: Feb 11th, 2016</p>
+      <p>Email: <a href="mailto:ouchunyu@yahoo.com">ouchunyu@yahoo.com</a></p>
+    </footer>
+  </div>
+</body>
+</html>
+
+<!--
+How was it to wireframe and create an HTML page with a pair?
+It was better than i do it myself, because this is a really creative work. One more person will definitely bring more ideas that i cound not figure alone. Like during this pair, i got a very good idea adding navigating arrows to redirect users to the previous blog posts or to the next coming blog post. I think this is a very essential idea that i probably would have missed. After this pair, i really would like to have a team when design a website.
+Did you find wireframing to be helpful to your development process?
+Yes, indeed. I did some work with HTML before, but pretty much only palying around with it on my own. I didn't know wireframing technique at that time, so the whole page looked very messy. This wireframing really helps me to organize and plan out everything.
+What did you and your pair decide made a good wireframe?
+We decide we would keep the page simplest possible since this is a template for blog posts. The text of a post is the most important thing we want users to see.
+
+What new semantic elements did you learn about (if any)?
+
+
+Link to the Wireframe image: https://github.com/OUCHUNYU/OUCHUNYU.github.io/blob/master/imgs/wireframe-blogs.png
+ -->
