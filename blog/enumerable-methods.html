@@ -41,11 +41,11 @@
 So it is awesome to call include method and include all theses methods for our own class.
 But, how do we do it?</p>
         <p>The thing about this Enumerable package is that we need to have a method defined inside our class, and it has to be exactly called each. Then we can actually use all these useful iterator methods from Enumerable. What should i define in this each method then? The answer is, it doesn’t really matter, i has to depend on what your situation is, and what kind of result you want. The reason for defining this each method is because many methods in Enumerable package is build on top of each method, without having one you can not use them.
-Now lets override some of the method inside this Enumerable then we can see the Array class has some changes as well. This is one of my favorite feature in Ruby, we can redefine pretty much everything.</p>
+Now lets define our own package and include it into our good friend Array class, so you can see why it is cool. We call this package MyEnumerable.</p>
         <code>
-module Enumerable<br>
+module MyEnumerable<br>
 <br>
-  def cycle(int = nil)<br>
+  def my_cycle(int = nil)<br>
     count = 0<br>
     loop {<br>
       (break nil) if count == int<br>
@@ -55,13 +55,13 @@ module Enumerable<br>
   end<br>
 end
         </code>
-        <p>For this blog post, i will use cycle method as an example.</p>
+        <p>For this blog post, i will use my_cycle method as an example, it basicly works like cycle method in Array class.</p>
         <p>First, we need to know what this method does, if you don’t know, this method takes an integer argument and loops the block we supply to this method, as many times as the integer we supply it. If argument integer we set to 2, this method will invoke each method with the block we give to it for 2 times. Note if we do not supply the argument, it will loop forever. So here, I first set a counter, and use loop method to let it run forever, but with in this block we pass to loop, we set a condition, if the count is equal to the argument we supply it, i will break, and then yield the block, by the end it will add 1 to the counter to indicated how many times we have looped thru it. Note the parameter we set to nil then if we don’t supply the argument the condition is not meeting so it will run forever. </p>
         <p>Wait, we did not change the behavior. Oops, let’s do a very little change, then you will see.</p>
         <code>
-moduel Enumerable<br>
+moduel MyEnumerable<br>
 <br>
-  def cycle(int = nil)<br>
+  def my_cycle(int = nil)<br>
     count = 0<br>
     loop {<br>
       (break "Enumerable is awesome!") if count == int<br>
@@ -69,22 +69,23 @@ moduel Enumerable<br>
       count += 1<br>
     }<br>
   end<br>
+end<br>
+<br>
+class Array<br>
+  incldue MyEnumerable<br>
+  undef cycle<br>
 end
         </code>
-        <p>now we call it by puting this line of code in our file. </p>
+        <p>now we call it by puting this lines of code in our file. </p>
 <code>
-p [2, 4, 7, 8].cycle(2) {|x| puts x }
+p [2, 4, 7, 8].my_cycle(2) {|x| puts x }
 </code>
 
-<p>Also because Array overrides the method cycle so we can disable that method so it won’t bother our demo. Because the methods in the class where we got our instance from, have higher precedence than the methods that are included into it. We disable this by calling
+<p>
+Lets run it!
 </p>
-<code>
-
-</code>
 
 <code>
-
-
 Desktop [master] :> ruby map.rb<br>
 2<br>
 4<br>
@@ -102,7 +103,7 @@ Desktop [master] :> ruby map.rb<br>
     </section>
 
     <div class="back-forth">
-      <a href="#">Previous</a>
+      <a href="diversity-in-tech.html">Previous</a>
       <a id="back-forth-2" href="#">Next</a>
     </div>
 
