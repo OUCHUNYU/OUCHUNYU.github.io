@@ -1,36 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
-  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
-  <title>Arrays|Hashes</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog_template.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <title>Blog|Chunyu Ou</title>
+  <style type="text/css">
+    em {
+      color: red;
+      font-size: 1.5em;
+      font-family: courier;
+    }
+
+    #bottom-nav a:hover {
+      text-decoration: none;
+    }
+
+  </style>
 </head>
-
 <body>
-  <div class="wrapper">
-    <header>
-      <div class="avatar">
-        <img src="../imgs/web-header-img.png">
-      </div>
-      <div>
-        <a  class="name" href="index.html">Chunyu Ou<a>
-      </div>
-    </header>
-    <br>
-    <hr>
-
-    <nav class="blog-nav">
-      <a href="#">Portfolio</a>
-      <a href="#">Projects</a>
-      <a href="#">About Me</a>
-      <a href="index.html">Blog</a>
+ <div id="wrapper">
+   <header>
+    <div id="header-title">
+      <a href="../index.html">Chunyu Ou</a>
+    </div>
+    <nav id="main-nav">
+      <a href="../index.html">Home</a>
+      <a href="../project.html">Project</a>
+      <a href="../about.html">About</a>
     </nav>
 
+    <div id="container">
+      <ul>
+        <li><a href="https://github.com/OUCHUNYU" target="_blank"><i class="fa fa-github fa-3x"></i></a></li>
+        <li><a href="https://twitter.com/OUCHUNYU" target="_blank"><i class="fa fa-twitter fa-3x"></i>
+        </a></li>
+        <li><a href="https://www.facebook.com/chunyu.ou.52" target="_blank"><i class="fa fa-facebook-official fa-3x"></i></a></li>
+      </ul>
+    </div>
+   </header>
 
-    <section class="main-section">
+   <main id="main-article">
       <section>
         <hr>
-        <h1>Arrays vs. Hashes</h1>
+        <h2>Arrays vs. Hashes</h2>
         <P>In our DBC learning week 4, we started our Ruby study. As one of the most dynamic programming language, certainly there a lot of things going on behind the code. As this is our first week on Ruby basic syntax and iteration. It's time to reflect on what i have learned on this topic.
 Whatever i want to dig, i always go to their libraries, here is what i found for Array and Hash</p>
         <p><em>Arrays</em>: Arrays are ordered, integer-indexed collections of any object.This was the first sentence when you go rubydoc. In which i think it's well informative. It's purpose is to store objects, and pretty much more than 99% of stuff in Ruby are objects. So it is an everything collection. The difference is they store objects in an integer indexed order, starts from 0, from left to right. The last object in the collection is indexed -1, from right to left, it goes -2, -3, -4 and so on. We can also access a specific object inside an array by its index. Example:</p>
@@ -73,19 +88,21 @@ Whatever i want to dig, i always go to their libraries, here is what i found for
         <p>Most of Hash and Array iterations are done by iterator methods, which inherited from Enumerator module, there is a set of hierarchy in between many classes and modules we can have them explained in future blog posts.</p>
         <p>Ruby's dynamic feature is one of the most important key of its popularity. With this we can define methods, create personal DSLs, build Ruby gems, implimenting frameworks in a dynamic, creative ways. Happy Coding.</p>
       </section>
-    </section>
 
-    <div class="back-forth">
-      <a href="css-concepts.html">Previous</a>
-      <a id="back-forth-2" href="diversity-in-tech.html">Next</a>
-    </div>
 
-    <footer>
-      <p>Posted by: Chunyu Ou</p>
-      <P>Posted date: Feb 11th, 2016</p>
-      <p>Email: <a href="mailto:ouchunyu@yahoo.com">ouchunyu@yahoo.com</a></p>
-    </footer>
+   </main>
+
+
+  <div id="bottom-nav">
+    <ul>
+      <li><button type="button" class="btn btn-default"><a href="css-concepts.html">Last Post</a></button></li>
+      <li><button id="right" type="button" class="btn btn-default"><a href="diversity-in-tech.html">Next Post</a></button></li>
+    </ul>
   </div>
+ </div>
+   <footer>
+    <p>Contact me: <a href="mailto:ouchunyu@yahoo.com">ouchunyu@yahoo.com</a> </p>
+   </footer>
 </body>
 </html>
 

@@ -1,36 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
-  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
-  <title>CSS Positioning</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog_template.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <title>Blog|Chunyu Ou</title>
+  <style type="text/css">
+    em {
+      color: red;
+      font-size: 1.5em;
+      font-family: courier;
+    }
+
+    #bottom-nav a:hover {
+      text-decoration: none;
+    }
+
+  </style>
 </head>
-
 <body>
-  <div class="wrapper">
-    <header>
-      <div class="avatar">
-        <img src="../imgs/web-header-img.png">
-      </div>
-      <div>
-        <a  class="name" href="../index.html">Chunyu Ou<a>
-      </div>
-    </header>
-    <br>
-    <hr>
-
-    <nav class="blog-nav">
-      <a href="#">Portfolio</a>
-      <a href="#">Projects</a>
-      <a href="#">About Me</a>
-      <a href="index.html">Blog</a>
+ <div id="wrapper">
+   <header>
+    <div id="header-title">
+      <a href="../index.html">Chunyu Ou</a>
+    </div>
+    <nav id="main-nav">
+      <a href="../index.html">Home</a>
+      <a href="../project.html">Project</a>
+      <a href="../about.html">About</a>
     </nav>
 
+    <div id="container">
+      <ul>
+        <li><a href="https://github.com/OUCHUNYU" target="_blank"><i class="fa fa-github fa-3x"></i></a></li>
+        <li><a href="https://twitter.com/OUCHUNYU" target="_blank"><i class="fa fa-twitter fa-3x"></i>
+        </a></li>
+        <li><a href="https://www.facebook.com/chunyu.ou.52" target="_blank"><i class="fa fa-facebook-official fa-3x"></i></a></li>
+      </ul>
+    </div>
+   </header>
 
-    <section class="main-section">
+   <main id="main-article">
       <section>
-        <hr>
-        <h1>A Little Insight Into CSS Position Property</h1>
+        <h2>A Little Insight Into CSS Position Property</h2>
         <P>As i am moving pretty okey progress with DBC, more and more information, skills, tips are flowing into my head. It felt cool to be able to finally create a web page, using HTML5 in phase0 week2. But just it was just a bare bone website with basic HTML5 tags and looked like 90s. I was really looking forward to learning CSS.
         Week 3, i can see significant increment of time that i was putting through each challenges, which is promising. Now i have complete the beginning session of CSS with codecademy and some other resources DBC provides, it is time to have reflections.
         When learning basics, most of them were pretty straightforward. Then i put theses knowledge into real pages, problems came up. I was able to control well with elements that i altered in place, not the elements i relocated however. This was frustrating as they just really would go the place i wanted. So i stopped and turned on google(new best friend), i knew it was time to research.</p>
@@ -64,18 +78,20 @@
         <p>Now we know how they work, and their differences should be clear to us. Static is default position for every element without being explicitly positioned. Relative is close to static, a relatively positioned value will move from its default place instead of moving from a particular element. Absolute tells an element to position according to its first parent’s position that is not set to static, if no such element exists the absolutely positioned element will position relatively to html body. Fixed works like absolute but it is fixed on the screen.<br>Cool, easy peasy. Again, relative and static which is default, care only their default, absolute cares its first parent, fixed cares like absolute does but will stick to a fixed place on your screen! <br>I hope this is helpful to some of you just started with HTML, and please point out any misunderstanding, or any error!</p>
         <p>Happy Coding!</p>
       </section>
-    </section>
 
-    <div class="back-forth">
-      <a href="responsive-design-basics.html">Previous</a>
-      <a id="back-forth-2" href="arrays-hashes.html">Next</a>
-    </div>
 
-    <footer>
-      <p>Posted by: Chunyu Ou</p>
-      <P>Posted date: Feb 3rd, 2016</p>
-      <p>Email: <a href="mailto:ouchunyu@yahoo.com">ouchunyu@yahoo.com</a></p>
-    </footer>
+   </main>
+
+
+  <div id="bottom-nav">
+    <ul>
+      <li><button type="button" class="btn btn-default"><a href="responsive-design-basics.html">Last Post</a></button></li>
+      <li><button id="right" type="button" class="btn btn-default"><a href="arrays-hashes.html">Next Post</a></button></li>
+    </ul>
   </div>
+ </div>
+   <footer>
+    <p>Contact me: <a href="mailto:ouchunyu@yahoo.com">ouchunyu@yahoo.com</a> </p>
+   </footer>
 </body>
 </html>
