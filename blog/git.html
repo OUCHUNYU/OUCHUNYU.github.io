@@ -1,33 +1,61 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Version Control and GitHub</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="stylesheets/default.css">
-  <link rel="stylesheet" type="text/css" href="stylesheets/blog.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog_template.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <title>Blog|Chunyu Ou</title>
+  <style type="text/css">
+    em {
+      color: red;
+      font-size: 1.5em;
+      font-family: courier;
+    }
+
+    #bottom-nav a:hover {
+      text-decoration: none;
+    }
+
+  </style>
 </head>
 <body>
-  <main>
-    <h1>Version Control and GitHub</h1>
-    <h2>A Blog Post from DBC Student CHUNYU OU(欧春雨)</h2>
-    <h4>Wednesday, Jan 20, 2016</h4>
-    <nav>
-    <a href="index.html">Home</a>
-    <a href="#">Portfolio</a>
-    <a href="#">Projects</a>
-    <a href="index.html">Blog</a>
+ <div id="wrapper">
+   <header>
+    <div id="header-title">
+      <a href="../index.html">Chunyu Ou</a>
+    </div>
+    <nav id="main-nav">
+      <a href="../index.html">Home</a>
+      <a href="../project.html">Project</a>
+      <a href="../about.html">About</a>
     </nav>
+
+    <div id="container">
+      <ul>
+        <li><a href="https://github.com/OUCHUNYU" target="_blank"><i class="fa fa-github fa-3x"></i></a></li>
+        <li><a href="https://twitter.com/OUCHUNYU" target="_blank"><i class="fa fa-twitter fa-3x"></i>
+        </a></li>
+        <li><a href="https://www.facebook.com/chunyu.ou.52" target="_blank"><i class="fa fa-facebook-official fa-3x"></i></a></li>
+      </ul>
+    </div>
+   </header>
+
+   <main id="main-article">
     <section>
-      <p><strong>What are the benefits of version control?</strong></p>
+      <hr>
+      <h2>What are the benefits of version control?</h2>
       <p>
         To understand what Version Control benefits programmers and what Version Control is, is essential for a software developer to become a better team player in real world tasks. A simple way to understand Version Control is that Version Control keeps track of changes of a file or files during a file or files lifetime. It is simple and useful for everyday tasks. Either you work alone or with others, it is good to use Version Control, because there are several benefits it offers us. Benefit#1: Version Control keeps track of your files and can tell all the changes you made and why you made them and when you made them. In case something goes wrong you are able to comeback to an earlier point to solve the problems. Benefit#2: Version Control allows you to have more than one person working on the same file at the same time. Benefit#3: It generates a new set of files for eachone who works with you, no one will override somebody else's work. So use version control and have a clear work flow.
       </p>
 
-      <p><strong>How does git help you keep track of changes?</strong></p>
+      <h2>How does git help you keep track of changes?</h2>
       <p>
         There are quite few different version control systems. Here I’m only gonna introduce you Git. Note Git is not GitHub. Git is a version control system software enables all the benefits of Using Version Control. It gives you ability to track changes, and make changes. Git unifies collaborative changes into commits, and allows you to take commits from more than one person and merge them into the project. It is simple, fast and lightweight. Once all tasks done it will get out the way immidiately. Git provides a tree like architecture for a project which allows a project to have many branches, so we can collaborate with more people. Git is something truly brilliant!
       </p>
 
-      <p><strong>Why use GitHub to store your code?</strong></p>
+      <h2>Why use GitHub to store your code?</h2>
       <p>
         To understand Why use GitHub to store your code is to understand what GitHub does for us. GitHub is a website where developers can share their code and keep track of changes using Git remotely. Github makes open source truly open, that people from all around the world can see. It provides awesome user interface to see when the changes were made. Because you need an account to use GItHub so it can also tell who made the changes. GitHub takes Version Control to a remote level, you can store your code and share with people or your collaborators, and allows them to contribute, or just to get some awesome ideas from other Github users.
       </p>
@@ -38,6 +66,20 @@
 
         <!-- copy and paste as many sections as you want to add paragraphs -->
       </section>
-    </main>
-  </body>
-  </html>
+
+
+   </main>
+
+
+  <div id="bottom-nav">
+    <ul>
+      <li><button type="button" class="btn btn-default"><a href="#">Last Post</a></button></li>
+      <li><button id="right" type="button" class="btn btn-default"><a href="responsive-design-basics.html">Next Post</a></button></li>
+    </ul>
+  </div>
+ </div>
+   <footer>
+    <p>Contact me: <a href="mailto:ouchunyu@yahoo.com">ouchunyu@yahoo.com</a> </p>
+   </footer>
+</body>
+</html>

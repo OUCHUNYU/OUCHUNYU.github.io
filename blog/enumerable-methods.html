@@ -1,36 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
-  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
-  <title>Ruby Enumerable</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog_template.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <title>Blog|Chunyu Ou</title>
+  <style type="text/css">
+    em {
+      color: red;
+      font-size: 1.5em;
+      font-family: courier;
+    }
+
+    #bottom-nav a:hover {
+      text-decoration: none;
+    }
+
+  </style>
 </head>
-
 <body>
-  <div class="wrapper">
-    <header>
-      <div class="avatar">
-        <img src="../imgs/web-header-img.png">
-      </div>
-      <div>
-        <a  class="name" href="index.html">Chunyu Ou<a>
-      </div>
-    </header>
-    <br>
-    <hr>
-
-    <nav class="blog-nav">
-      <a href="#">Portfolio</a>
-      <a href="#">Projects</a>
-      <a href="#">About Me</a>
-      <a href="index.html">Blog</a>
+ <div id="wrapper">
+   <header>
+    <div id="header-title">
+      <a href="../index.html">Chunyu Ou</a>
+    </div>
+    <nav id="main-nav">
+      <a href="../index.html">Home</a>
+      <a href="../project.html">Project</a>
+      <a href="../about.html">About</a>
     </nav>
 
+    <div id="container">
+      <ul>
+        <li><a href="https://github.com/OUCHUNYU" target="_blank"><i class="fa fa-github fa-3x"></i></a></li>
+        <li><a href="https://twitter.com/OUCHUNYU" target="_blank"><i class="fa fa-twitter fa-3x"></i>
+        </a></li>
+        <li><a href="https://www.facebook.com/chunyu.ou.52" target="_blank"><i class="fa fa-facebook-official fa-3x"></i></a></li>
+      </ul>
+    </div>
+   </header>
 
-    <section class="main-section">
-      <section>
+   <main id="main-article">
+     <section>
         <hr>
-        <h1>Ruby Enumerable</h1>
+        <h2>Ruby Enumerable</h2>
         <p>Ruby is a very interesting language as its flexibility and dynamic features which make this language super fun to play around with. There is a very cool feature i would like to talk and use over and over again called Module. The benefit of it i can’t simply count, because there is so much. A module is like a bundle of classes or methods or classes and methods. You simply call the class method include within your class body, then all of your class instances get to share all the instance methods shipped in module. I always like to supply my class a powerful package that is redefined in Ruby library called Enumerable. If you apply method ancestors on, let say Array. It should return you something like this</p>
         <code>Array.ancestors<br>
           [Array, Enumerable, Object, Kernel, BasicObject]</code>
@@ -100,18 +115,20 @@ Desktop [master] :> ruby map.rb<br>
 <p>It works!</p>
 
       </section>
-    </section>
 
-    <div class="back-forth">
-      <a href="diversity-in-tech.html">Previous</a>
-      <a id="back-forth-2" href="#">Next</a>
-    </div>
 
-    <footer>
-      <p>Posted by: Chunyu Ou</p>
-      <P>Posted date: Feb 20th, 2016</p>
-      <p>Email: <a href="mailto:ouchunyu@yahoo.com">ouchunyu@yahoo.com</a></p>
-    </footer>
+   </main>
+
+
+  <div id="bottom-nav">
+    <ul>
+      <li><button type="button" class="btn btn-default"><a href="diversity-in-tech.html">Last Post</a></button></li>
+      <li><button id="right" type="button" class="btn btn-default"><a href="#">Next Post</a></button></li>
+    </ul>
   </div>
+ </div>
+   <footer>
+    <p>Contact me: <a href="mailto:ouchunyu@yahoo.com">ouchunyu@yahoo.com</a> </p>
+   </footer>
 </body>
 </html>

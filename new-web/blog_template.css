@@ -81,7 +81,13 @@ header a {
 
 #main-article {
   font-size: 0.8em;
-  margin: 8% 2% 1% 2%;
+  margin: 8% 2% 5% 2%;
+
+}
+
+#main-article img {
+  width: 50%;
+  padding-bottom: 3em;
 }
 
 #main-article .container {
@@ -97,7 +103,7 @@ header a {
 }
 
 
-/*#bottom-nav li {
+#bottom-nav li {
   display: inline;
 
 
@@ -107,7 +113,7 @@ header a {
   float: right;
   margin-right: 3%;
   margin-top: 0.5%;
-}*/
+}
 
 
 /*//////////////////////////////////////////////////////////////////

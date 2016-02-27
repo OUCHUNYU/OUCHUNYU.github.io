@@ -1,72 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
-  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
-  <title>Blog Template</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog_template.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <title>Blog|Chunyu Ou</title>
+  <style type="text/css">
+    em {
+      color: red;
+      font-size: 1.5em;
+      font-family: courier;
+    }
+
+    #bottom-nav a:hover {
+      text-decoration: none;
+    }
+
+  </style>
 </head>
-
 <body>
-  <div class="wrapper">
-    <header>
-      <div class="avatar">
-        <img src="../imgs/web-header-img.png">
-      </div>
-      <div>
-        <a  class="name" href="index.html">Chunyu Ou<a>
-      </div>
-    </header>
-    <br>
-    <hr>
-
-    <nav class="blog-nav">
-      <a href="#">Portfolio</a>
-      <a href="#">Projects</a>
-      <a href="#">About Me</a>
-      <a href="index.html">Blog</a>
+ <div id="wrapper">
+   <header>
+    <div id="header-title">
+      <a href="../index.html">Chunyu Ou</a>
+    </div>
+    <nav id="main-nav">
+      <a href="../index.html">Home</a>
+      <a href="../project.html">Project</a>
+      <a href="../about.html">About</a>
     </nav>
 
-
-    <section class="main-section">
-      <section>
-        <hr>
-        <h1>Blog Post Title</h1>
-        <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum augue neque, commodo malesuada ultricies ac, convallis id sem. Curabitur malesuada interdum urna eu accumsan. Morbi tempor massa sed nisi sodales iaculis. Cras rhoncus egestas neque in sodales. Fusce lacus ligula, pulvinar ut arcu a, facilisis aliquam ante. Pellentesque consectetur commodo lorem eu auctor. Phasellus id nulla vitae tellus vehicula molestie id malesuada eros. Nam ut efficitur lorem.
-
-        Mauris scelerisque erat ullamcorper, vehicula arcu eget, tempus erat. Praesent condimentum tempus nibh, nec placerat mi. Vivamus pretium tellus vitae convallis porttitor. Integer et sodales felis. Donec hendrerit tortor diam, eget ornare tortor aliquet eget. Maecenas tempus maximus eros, nec porttitor eros. Ut nec ipsum sed nulla accumsan lobortis. Maecenas non tristique massa, et finibus sem. Donec in tempor elit. Morbi et metus eu lacus mattis dictum at nec nisi. Fusce semper est quis volutpat molestie. Vestibulum quis malesuada augue. Praesent a odio nec dui pretium rhoncus et ut tellus.
-
-        Donec sodales ipsum a tortor commodo suscipit. Praesent sit amet nibh nisl. Duis nec dolor sed diam sagittis auctor. Aliquam elementum turpis vel tristique porttitor. Aliquam faucibus auctor ante vel pellentesque. Maecenas id ante aliquam, egestas libero sed, laoreet est. Proin a lorem eu massa volutpat malesuada ut at quam. Nulla placerat, lorem vitae scelerisque varius, nisl augue ultrices lacus, vitae tempor arcu dui sit amet dolor. Nunc viverra rhoncus ligula, ut efficitur lacus imperdiet eget. Cras et fringilla leo. Pellentesque est nulla, porttitor quis sodales ac, ullamcorper eu enim. Nunc efficitur fermentum elit rutrum pulvinar. Ut placerat tempor libero, in aliquam purus luctus non. Vivamus eu maximus purus, sit amet semper risus. Proin tincidunt justo sit amet orci mollis interdum.
-
-        Sed imperdiet, dui quis sagittis sollicitudin, urna lectus iaculis purus, vel pretium lorem sem in libero. Aenean nec placerat lacus. Fusce sem libero, semper et posuere a, semper in lacus. Aliquam erat volutpat. Aliquam a elit at sem accumsan sodales eu vel orci. Ut eget tortor dictum, lacinia elit nec, hendrerit risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus placerat ipsum arcu, scelerisque mattis tortor fringilla sed. Maecenas ultrices velit quis est malesuada blandit. Fusce fringilla vitae ipsum id fringilla. Nulla facilisi.
-
-        Phasellus ac tempus tellus, eget tincidunt metus. Nam dictum egestas erat quis venenatis. Nunc vehicula magna vel accumsan aliquam. Nunc volutpat, nibh ac tincidunt suscipit, quam ante lacinia sem, nec convallis ipsum ante et nisi. Phasellus placerat augue placerat, convallis quam ut, rutrum metus. Vestibulum volutpat augue sed dictum viverra. Sed molestie condimentum risus sed dignissim. Phasellus varius leo vitae nisi aliquam, vel scelerisque nunc rhoncus. Nulla sit amet diam porttitor, tristique dolor at, molestie dui. Aliquam nec dapibus mi. Sed varius lectus a efficitur dignissim. Aliquam vehicula vel odio eu tempus. In dapibus porttitor neque, vitae sodales dui rhoncus in. Fusce condimentum enim at euismod maximus.</p>
-      </section>
-    </section>
-
-    <div class="back-forth">
-      <a href="#">Previous</a>
-      <a id="back-forth-2" href="#">Next</a>
+    <div id="container">
+      <ul>
+        <li><a href="https://github.com/OUCHUNYU" target="_blank"><i class="fa fa-github fa-3x"></i></a></li>
+        <li><a href="https://twitter.com/OUCHUNYU" target="_blank"><i class="fa fa-twitter fa-3x"></i>
+        </a></li>
+        <li><a href="https://www.facebook.com/chunyu.ou.52" target="_blank"><i class="fa fa-facebook-official fa-3x"></i></a></li>
+      </ul>
     </div>
+   </header>
 
-    <footer>
-      <p>Posted by: Chunyu Ou</p>
-      <P>Posted date: Jan 31st, 2016</p>
-      <p>Email: <a href="mailto:ouchunyu@yahoo.com">ouchunyu@yahoo.com</a></p>
-    </footer>
+   <main id="main-article">
+    <hr>
+
+
+
+   </main>
+
+
+  <div id="bottom-nav">
+    <ul>
+      <li><button type="button" class="btn btn-default"><a href="">Last Post</a></button></li>
+      <li><button id="right" type="button" class="btn btn-default"><a href="">Next Post</a></button></li>
+    </ul>
   </div>
+ </div>
+   <footer>
+    <p>Contact me: <a href="mailto:ouchunyu@yahoo.com">ouchunyu@yahoo.com</a> </p>
+   </footer>
 </body>
 </html>
-
-<!--
-How was it to wireframe and create an HTML page with a pair?
-It was better than i do it myself, because this is a really creative work. One more person will definitely bring more ideas that i cound not figure alone. Like during this pair, i got a very good idea adding navigating arrows to redirect users to the previous blog posts or to the next coming blog post. I think this is a very essential idea that i probably would have missed. After this pair, i really would like to have a team when design a website.
-Did you find wireframing to be helpful to your development process?
-Yes, indeed. I did some work with HTML before, but pretty much only palying around with it on my own. I didn't know wireframing technique at that time, so the whole page looked very messy. This wireframing really helps me to organize and plan out everything.
-What did you and your pair decide made a good wireframe?
-We decide we would keep the page simplest possible since this is a template for blog posts. The text of a post is the most important thing we want users to see.
-
-What new semantic elements did you learn about (if any)?
-
-
-Link to the Wireframe image: https://github.com/OUCHUNYU/OUCHUNYU.github.io/blob/master/imgs/wireframe-blogs.png
- -->
