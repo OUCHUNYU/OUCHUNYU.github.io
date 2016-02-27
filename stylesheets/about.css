@@ -16,6 +16,7 @@ header {
   width: 100%;
   left: 0px;
   right: 0px;
+
 }
 
 header a {
@@ -23,6 +24,11 @@ header a {
   font-weight: bold;
   color: black;
   text-decoration: none;
+}
+
+header a.visited {
+  color: black;
+
 }
 
 #header-title {
@@ -36,10 +42,7 @@ header a {
   position: relative;
   font-size: 2em;
   left: 1em;
-}
 
-#header-title a:hover {
-  text-decoration: none;
 }
 
 #main-nav {
@@ -62,6 +65,7 @@ header a {
 }
 
 #container {
+
   position: relative;
   font-size: 0.5em;
   float: right;
@@ -82,33 +86,68 @@ header a {
 #main-article {
   font-size: 0.8em;
   margin: 8% 2% 1% 2%;
+  /*border: 1px solid black;*/
 }
 
 #main-article .container {
-    width: 100%;
+  /*border: 1px solid black;*/
+  margin-top: 2em;
+  width: 80%;
 }
 
-#main-article h1 {
-  color: black;
+#myself-img {
+  position: relative;
+  width: 25%;
+  left: 1.5em;
+  padding-right: 2em;
+  border-right: 5px solid black;
 }
 
-.author {
-  font-size: 0.6em;
-}
-
-
-/*#bottom-nav li {
-  display: inline;
-
-
-}
-
-#bottom-nav #right {
+#about-me {
+  position: relative;
+  width: 60%;
   float: right;
-  margin-right: 3%;
-  margin-top: 0.5%;
+  top: 3em;
+  right: 3em;
+}
+
+.about-text {
+  font-size: 1.2em;
+  text-align: right;
+  position: relative;
+  border-right: 5px solid black;
+  width: 20%;
+  left: 3.5em;
+  top: 5em;
+  padding-top: 0.5em;
+  padding-right: 1em;
+  padding-bottom: 2em;
+  margin-bottom: 5em;
+}
+
+.about-text-table {
+  position: relative;
+  /*border: 1px solid black;*/
+  float: right;
+  right: 14em;
+  bottom: 5em;
+
+}
+
+#professional-development {
+  right: 16.8em;
+}
+
+
+/*#main-article h1 {
+  text-align: center;
+  color: black;
 }*/
 
+.author {
+  text-align: center;
+  font-size: 0.6em;
+}
 
 /*//////////////////////////////////////////////////////////////////
                    Footer*/

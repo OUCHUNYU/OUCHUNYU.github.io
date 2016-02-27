@@ -1,150 +1,134 @@
-/** {
-  border: 2px dashed black;
-}*/
-.wrapper {
-  margin: -8px auto;
-  width: 98%;
-  color:black;
+html, body {
+  height: 100%;
 }
 
-body {
-  margin-bottom: -5px;
+#wrapper {
+  min-height: 100%;
+  font-size: 1.5em;
+  margin-top: -10px;
 }
 
+/*//////////////////////////////////////////////////////////////////
+                   header*/
 
-/*                  HEADER
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 header {
-  background-color: #f2f2f2;
-  margin-top: -1.594387755102041%;
-  margin-right: -0.63775510204081625%;
-  margin-left: -0.63775510204081625%;
-  margin-bottom: -1.992984693877551%;
   position: relative;
-  padding-bottom: 13.552295918367346%;
-
+  width: 100%;
+  left: 0px;
+  right: 0px;
 }
 
-header div {
-  position: absolute;
-  width: 300px;
-  margin-top: 70px;
-  margin-left: 160px;
+header a {
+  font-family: Courier;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
 }
 
-.avatar {
-  position: absolute;
-  margin-top: 33px;
-  margin-left: 45px;
-  height: 100px;
-  width: 100px;
-  border-radius: 100%;
+#header-title {
+  position: relative;
 
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
-.avatar img {
-  height: 100px;
-  width: 100px;
-  border-radius: 100%;
-  border: 3px solid #bfbfbf;
-}
-
-.name {
+#header-title a {
+  position: relative;
   font-size: 2em;
-  font-weight: bold;
+  left: 1em;
+}
+
+#header-title a:hover {
   text-decoration: none;
 }
 
-.name:hover {
-  color: #2481ff;
-}
-
-a:visited {
-  color: #000000;
-}
-
-hr {
-  border: 2px solid black;
-  margin-left: -8px;
-  margin-right: -8px;
-}
-
-.nav-1 a {
-  border-radius: 10px;
-  margin-left: 5.5803571428571425%;
-  margin-bottom: 3.188775510204082%;
-  display: inline-block;
-  padding: 2.391581632653061%;
-  text-decoration: none;
-  font-size: 1.5em;
-  font-weight: bold;
+#main-nav {
+  position: absolute;
+  background-color: #52527a;
+  display: inline;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  width: 100%;
 
 }
-.nav-1 a:hover {
-  background-color: #e6e6e6;
+
+#main-nav a {
+  position: relative;
+  color: #fff;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
 }
-.nav-1 a:visited {
+
+#container {
+  position: relative;
+  font-size: 0.5em;
+  float: right;
+  bottom: 4em;
+  right: 2em;
+
+}
+
+#container li {
+  position: relative;
+  right: 2em;
+  display: inline;
+}
+
+/*//////////////////////////////////////////////////////////////////
+                   Main Section*/
+
+#main-article {
+  font-size: 0.8em;
+  margin: 8% 2% 1% 2%;
+}
+
+#main-article .container {
+    width: 100%;
+}
+
+#main-article h1 {
   color: black;
 }
 
-
-/*                  Main
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-
-.main-section {
-  /*border: 2px dashed black;*/
-  margin: 3.188775510204082%;
-  font-size: 1.25em;
+.author {
+  font-size: 0.6em;
 }
 
 
-
-.main-section h3 {
-  font-size: 1.5em;
-}
-
-.main-section a {
-  text-decoration: none;
-  font-size: 1.25em;
-}
-.main-section a:visited {
-  color: #0000ff;
-}
-
-.nav-2 a {
-  /*border: 2px solid #b3b3b3;*/
-  display: inline-block;
-  padding: 1.594387755102041%;
-  margin-left: 11.957908163265306%;
-  margin-top: 2.391581632653061%;
-  margin-bottom: 2.391581632653061%;
-  text-decoration: none;
-  border-radius: 10px;
-  background-color: #b3ecff;
-}
-.nav-2 a:hover {
-  background-color: orange;
-}
-.nav-2 a:visited {
-  color: black;
-}
+/*#bottom-nav li {
+  display: inline;
 
 
+}
 
-/*                  Footer
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#bottom-nav #right {
+  float: right;
+  margin-right: 3%;
+  margin-top: 0.5%;
+}*/
+
+
+/*//////////////////////////////////////////////////////////////////
+                   Footer*/
 
 footer {
-  padding: 3.985969387755102%;
-  background-color: #2a2a2a;
-  margin-left: -0.63775510204081625%;
-  margin-right: -0.63775510204081625%;
+  position: absolute;
+  width: 100%;
+  height: 5em;
+  background-color: #333333;
+  text-align: center;
+  font-size: 0.9em;
 }
 
 footer p {
-  color: #ffffff;
+  position: relative;
+  top: 2em;
+  color: #8c8c8c;
 }
 
 footer a {
-  color: #ffffff;
+  color: #8c8c8c;
 }
+
