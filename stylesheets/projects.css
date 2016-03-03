@@ -96,17 +96,16 @@ header a {
   font-size: 0.6em;
 }
 
-.container {
-  border: 1px solid black;
-}
-
 .project-table {
+  margin: auto;
+  margin-left: 3em;
   width: 45%;
   display: inline-block;
+  padding-top: 1em;
 }
 
 .project-table th {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   font-size: 1.2em;
 }
 
@@ -115,7 +114,7 @@ header a {
 }
 
 .project-table td {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   /*text-align: right;*/
 }
 
