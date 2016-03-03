@@ -128,16 +128,12 @@ header a.visited {
 .about-text-table {
   position: relative;
   /*border: 1px solid black;*/
-  float: right;
-  right: 14em;
+  margin: auto;
+  margin-left: 34%;
+  width: 50%;
   bottom: 5em;
 
 }
-
-#professional-development {
-  right: 16.8em;
-}
-
 
 /*#main-article h1 {
   text-align: center;
