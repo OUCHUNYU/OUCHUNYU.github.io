@@ -78,6 +78,9 @@ header a {
 
 /*//////////////////////////////////////////////////////////////////
                    Main Section*/
+#post-date {
+  font-size: 0.8em;
+}
 
 #main-article {
   font-size: 0.8em;
