@@ -88,7 +88,8 @@ header a {
 }
 
 #main-article .container {
-    width: 100%;
+  /*border: 1px solid black;*/
+  width: 100%;
 }
 
 #main-article h1 {
@@ -100,8 +101,10 @@ header a {
 }
 
 .project-table {
+  /*border: 1px solid black;*/
   margin: auto;
-  margin-left: 3em;
+  margin-left: 2.5em;
+
   width: 45%;
   display: inline-block;
   padding-top: 1em;
