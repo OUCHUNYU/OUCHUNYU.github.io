@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog_template.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <title>Blog|Chunyu Ou</title>
+  <style type="text/css">
+    em {
+      color: red;
+      font-size: 1.5em;
+      font-family: courier;
+    }
+
+    #bottom-nav a:hover {
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+ <div id="wrapper">
+   <header>
+    <div id="header-title">
+      <a href="../index.html">Chunyu Ou</a>
+    </div>
+    <nav id="main-nav">
+      <a href="../index.html">Home</a>
+      <a href="../project.html">Project</a>
+      <a href="../about.html">About</a>
+    </nav>
+
+    <div id="container">
+      <ul>
+        <li><a href="https://github.com/OUCHUNYU" target="_blank"><i class="fa fa-github fa-3x"></i></a></li>
+        <li><a href="https://twitter.com/OUCHUNYU" target="_blank"><i class="fa fa-twitter fa-3x"></i>
+        </a></li>
+        <li><a href="https://www.facebook.com/chunyu.ou.52" target="_blank"><i class="fa fa-facebook-official fa-3x"></i></a></li>
+      </ul>
+    </div>
+   </header>
+
+   <main id="main-article">
+    <p id="post-date">Created on: March 12, 2016</p>
+    <hr>
+    <h2>Test-Driven Development with Rails</h2>
+    <p>
+      As we are studying at DBC, we will be majorly focusing on Ruby, and for Web development, we have Ruby on Rails as a very popular and handy framework. There are many good reason why its got popular. From my experiences with Rails, it is fast, productive and it helps you build  RESTful API quickly in a world RESTful standard, better more, it is designed with TDD concepts in mind. I have not been in programming for very long, i have to say i am pretty much a newbie. But i really like TDD and have been using it every since i learnt how to write a test. No test no go. As we will be focusing on RoR in DBC study, i will put TDD as my focus, but before that, lets go thru Rails official guid to testing Rails apps.
+    </p>
+    <p>
+      As learning Ruby, Rubydoc is always the place to go, it is well documented. Do you know actually Rails as well, no need to learn with some online tutorial, you have it here on its official site, and it covers everything that you ever need to know about Rails, documents, source code, API and tutorial to get you started.<br>
+      <p><a href="http://guides.rubyonrails.org/" target="_blank">Go check it out, it is a good place to start.</a></p>
+    </p>
+    <p>
+      By default when you use common <code>rails generate new app_name</code> in your shell, rails generate 3 standard environments: development, production and test. All their config info are store in <code>config/database.yml</code> file. By default when you use common in your shell, rails generate 3 standard environments: development, production and test. All their config info are store in. As well as 3 separated databases for them. This means when we are testing a rails app we are totally running a fresh, isolated database, that is designed and intended for testing. When you run on such database, any stored data in, let say development environment is not involved, so we can totally mess around with database, test customer models, do integration test, and more with confidence.
+    </p>
+
+
+
+   </main>
+
+
+  <div id="bottom-nav">
+    <ul>
+      <li><button type="button" class="btn btn-default"><a href="JavaScript.html">Last Post</a></button></li>
+      <li><button id="right" type="button" class="btn btn-default"><a href="#">Next Post</a></button></li>
+    </ul>
+  </div>
+ </div>
+   <footer>
+    <p>Contact me: <a href="mailto:ouchunyu@yahoo.com">ouchunyu@yahoo.com</a> </p>
+   </footer>
+</body>
+</html>
