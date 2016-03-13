@@ -304,12 +304,89 @@ end                                         end
       </code></pre>
       This testing all the names with list tage and class name user_name. The second assertion is testing if the template file correctly rendered, 'users/index' is file path.
     </p>
+    <p>Now lets have a look on integration tests. Let's consider a sample code from Rails site, i will comment next to the code.</p>
+    <pre>
+    require 'test_helper'                                     # standard stuff comes with test, require helper.
 
+    class UserFlowsTest &lt; ActionDispatch::IntegrationTest     # Note the super class change
+      test "login and browse site" do                         # funciton name will show as test_login_and_browse_site
+        # login via https
+        https!
+        get "/login"                                          # get login page file
+        assert_response :success                              # checking the file loaded well
 
+        post_via_redirect "/login", username: users(:david).username, password: users(:david).password       # Note you can pass params using the data in fixtures, like users(:david), this is passing the david object
+        assert_equal '/welcome', path                         # testing welcome page is linked with path
+        assert_equal 'Welcome david!', flash[:notice]         # testing flash message content
 
-
-
-
+        https!(false)
+        get "/articles/all"                                   # load such file
+        assert_response :success
+        assert assigns(:articles)
+      end
+    end
+    </pre>
+    <p>In TDD you want to have tests for pretty much everything, even not in TDD you are still suposed to test everything, controllers, integration, database models and all, base on what you have defined or this app, as well as routes. It is recommanded to test all routes, make sure they work funtionally. You can test it with method <code>assert_routing</code> check the reference list above. Rails comes with support methods for testing helpers, jobs, mailers as well, using the same test format as other tests we have seen.</p>
+    <p>After you have created your tests, just go back to command line and <kbd>rake test</kbd>. here we have a list of command to narrow down your test:
+      <table class="table table-bordered">
+      <thead>
+      <tr>
+      <th>Tasks</th>
+      <th>Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td><code>rake test</code></td>
+      <td>Runs all tests in the <code>test</code> folder. You can also simply run <code>rake</code> as Rails will run all the tests by default</td>
+      </tr>
+      <tr>
+      <td><code>rake test:controllers</code></td>
+      <td>Runs all the controller tests from <code>test/controllers</code>
+      </td>
+      </tr>
+      <tr>
+      <td><code>rake test:functionals</code></td>
+      <td>Runs all the functional tests from <code>test/controllers</code>, <code>test/mailers</code>, and <code>test/functional</code>
+      </td>
+      </tr>
+      <tr>
+      <td><code>rake test:helpers</code></td>
+      <td>Runs all the helper tests from <code>test/helpers</code>
+      </td>
+      </tr>
+      <tr>
+      <td><code>rake test:integration</code></td>
+      <td>Runs all the integration tests from <code>test/integration</code>
+      </td>
+      </tr>
+      <tr>
+      <td><code>rake test:jobs</code></td>
+      <td>Runs all the job tests from <code>test/jobs</code>
+      </td>
+      </tr>
+      <tr>
+      <td><code>rake test:mailers</code></td>
+      <td>Runs all the mailer tests from <code>test/mailers</code>
+      </td>
+      </tr>
+      <tr>
+      <td><code>rake test:models</code></td>
+      <td>Runs all the model tests from <code>test/models</code>
+      </td>
+      </tr>
+      <tr>
+      <td><code>rake test:units</code></td>
+      <td>Runs all the unit tests from <code>test/models</code>, <code>test/helpers</code>, and <code>test/unit</code>
+      </td>
+      </tr>
+      <tr>
+      <td><code>rake test:db</code></td>
+      <td>Runs all tests in the <code>test</code> folder and resets the db</td>
+      </tr>
+      </tbody>
+      </table></p>
+    <p>Before start to use TDD as your approach, it is absolutly better to have a good knowledge about what your framework can offer. Now you have pretty basic knowledge about how rails testing can be done with big variaty of helpers, there is no excuses for a Rails app has no test. </p>
    </main>
 
 
