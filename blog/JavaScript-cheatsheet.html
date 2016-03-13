@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog_template.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <title>Blog|Chunyu Ou</title>
+  <style type="text/css">
+    em {
+      color: red;
+      font-size: 1.5em;
+      font-family: courier;
+    }
+
+    #bottom-nav a:hover {
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+ <div id="wrapper">
+   <header>
+    <div id="header-title">
+      <a href="../index.html">Chunyu Ou</a>
+    </div>
+    <nav id="main-nav">
+      <a href="../index.html">Home</a>
+      <a href="../project.html">Project</a>
+      <a href="../about.html">About</a>
+    </nav>
+
+    <div id="container">
+      <ul>
+        <li><a href="https://github.com/OUCHUNYU" target="_blank"><i class="fa fa-github fa-3x"></i></a></li>
+        <li><a href="https://twitter.com/OUCHUNYU" target="_blank"><i class="fa fa-twitter fa-3x"></i>
+        </a></li>
+        <li><a href="https://www.facebook.com/chunyu.ou.52" target="_blank"><i class="fa fa-facebook-official fa-3x"></i></a></li>
+      </ul>
+    </div>
+   </header>
+
+   <main id="main-article">
+    <p id="post-date">Created on: March 12, 2016</p>
+    <hr>
+    <h2>JavaScript Learning Outline</h2>
+    <p>I have been learning JavaScript for a couple of weeks with book Eloquent JavaScript, and feel this language is pretty insteresting. Here i list some of the knowledge i have found useful so far, i will keep updating this sheet untill the finish of the book.</p>
+    <h3>Function(Chapter 3)</h3>
+    <p>
+      <strong>return</strong>: Returns the expression following this statement and pass the value the expression evaluates to the calling method. If there is nothing for return, this will cause the function to return undefined.<br>
+      <strong>local variables</strong>: Local variables are local to a caller function, only variables defined within a function body and parameters of a funciton are local.<br>
+      <strong>global variables</strong>: defined anywhere outside a function body, they are visible thruough out the program accessible with in functions.<br>
+      <strong>Only functions create new scopes.</strong><br>
+      <strong>Note, don't nest a function definition inside a if or loop block</strong><br>
+      <strong>When calling a function, if the function takes 2 arguments and we supply it 3, the third one is discared. If we supply less than 2, the second argument will be auto assgined to undefined</strong><br>
+      <strong>function recursion is about 10 times slower than a cheap loop call</strong><br>
+    </p>
+    <h3>Objects And Arrays(Chapter 4)</h3>
+      In JavaScript all methods are refered to properties of an object, we have two ways to get access a property of an object. First using dot notaion, with the property name, and second one we can use brackets and property name with double quotation marks.<br>
+
+      object: objects are arbitrary collections of properties. One way to create a object is by using a brace notation.<br>
+
+      strings: we can add properties to an object but not to a string, if we added, nothing going to happen but this property will return only undefined. It only response to buildin properties like toUpperCase, length etc. <strong> Values of type like string, number, boolean are not objects. </strong><br>
+
+      Arguments passed to a function are held by the ** arguments object ** it has a length property to tell how many arguments actually passed into body of a function. Note this is a property not a method.<br>
+
+      Functions that take any numbers of arugments like console.log() have internal looping for them arguments.<br>
+
+      Math: There is only one Math object, and it works like a group of math related functionalities.<br>
+
+      global object: the global scope like where global variables live is represented by one objecrt called window, anything global variables are properties of this object.<br>
+
+      <p><strong>Methods of this chapter:</strong></p>
+
+      <strong>indexOf()</strong>, <strong>lastIndexOf()</strong> both of these methods take optional second arguments as the index where they start to search for the frist arguement index.<br>
+      <strong>slice()</strong>: If we supply 2 arugments this mehtod uses them as starting index and ending index of search and return items in between them, the start index is inclusive, end index is exlusive. If we supply only 1 arugment it will return all items after this arguement index. <strong>similar method for Strings as well.</strong><br>
+      <strong>concat()</strong>: concatinate two arrays.<br>
+      <strong>trim()</strong>: removes whitespace from start and end of the string. (String method)<br>
+      <strong>charAt()</strong>: takes index and returns the char at the index.<br>
+
+      <strong>Math.random()</strong>: returns only number from 0 to 1(exclusive).<br>
+
+      <h3>Higher-Order Functions(Chapter 5)</h3>
+      <p>
+        <strong>Array.forEach()</strong>: To apply same function to each elements inside an array<br>
+        <strong>Array.filter()</strong>: To apply same function to each elements inside an array and return a new array containing the filtered elements, working much like Ruby method select in Array class<br>
+        <strong>Array.map()</strong>: The same like the Ruby map<br>
+        <strong>Array.reduce()</strong>: Combining all elements inside an array to a single value, i like how it works like selecting method to get the highest value and smallest value of an array.<br>
+        NOTE: forEach. filter, map, reduce all take optional second arguement which indicates the index number of element we are iterating. We can use underscord to block one of those argument to ignor it like in<br> Ruby<pre><code>array.map {|_, arg2| block }</code></pre> JS <pre><code>myArray.map (function(_, index) { block });</code></pre>
+      </p>
+
+      <h3>The Secret Life of Objects(Chapter 6)</h3>
+      <p>
+        <strong>this</strong>: refers to the object a properties is called on, if you just simply print this with a console.log it will print a {}<br>
+        <strong>prototype</strong>: In addition to objects properties, almost of the object also have prototype and prototype's prototype, when a property is get called, the properties get searched, then prototype get searched. If there is one, then it gets excuted. <pre><code>console.log(Object.getPrototypeOf({}) == Object.prototype); // true </code></pre>This kind of designe is much similar to Ruby as OOP language, that in Ruby there is an Object class as base class of all classes. In JavaScript we have this Object.prototype as a base prototype that has some methods shared by all the objects. Like
+
+<pre><code>Object.toString()
+Object.getPrototypeOf(target)
+Object.create(aObjectName) //This method create a new object with protoype of the argument object</code></pre>
+
+        <strong>Constructors</strong>: Constructors work much like classes in Ruby. Define a constructor like defininig a funciton, using function keyword and following by {} like defining obejct. Use new keyword in front of the constructor method name to create a new object of this constructor. When interpreter sees new keyword it will treat this as a constructor call. An obejct created this by a constructor function is a instace of this constructor. Prototypes get shared with this instance. Constructors prototype: Every constructor has a property named prototype, it is a plain obejct that derived from Object.prototype. Every instance of this constructor will have this property as its prototype. So when we just do aConstructor.prototype.methodName = function () {}; we define a new property(or method for this constructor's prototype property) then all the instance fo this constructor will have this method. Note that constructors are functions. So the actual prototype of a constructor is Function.prototype. All those properties defined in a prototype are allowed to be overriden by the instances of this constructor.<br>
+        There is a very interesting thing about the properties we define inside an object:
+        <pre><code>
+          Object.prototype.nonsense = "Hi";
+          for (var item in anObject) {
+            console.log(item);
+          }
+        </code></pre>
+        This interstingly prints everything with nonsense as well. Becasue in JavaScript properties are either <strong>enumerable</strong> or <strong>nonenumerble</strong>. Enumerable properties are the properties we simply assign with equal sign = the non enumerables are the standard properties in prototypes. It is possible to define nonenumerable properties using <code>Object.defineProperty()</code> which give the right to controll what properties we are creating.<br>
+        <code>object.hasOwnProperty("propertyName")</code>: This method is more useful than <code>in</code> because this tells us if a object actually has a property called this name or not.<br>
+        properties checking snippit:
+        <pre><code>
+          for (var name in map) {
+            if (map.hasOwnProperty(name)) {
+              // ... this is an own property
+            }
+          }
+        </code></pre>
+        Better more, in JavaScript we can also create an object with no prototype. Because this prototype is like Modules in Ruby, a packeage of properties and sometimes you just don't need it, not even the Object.prototype. In this case we can use <code>Object.create(null);</code> then we assign this value to a variable, this new object does not have anything.<br>
+        <strong>Object.keys(objectName)</strong>: Returns an array contains all properties of argument object.<br>
+        <strong>Inheritance</strong>: simply using <code>new Object = Object.create(object.prototype);</code> to have the newObject carries the same prototype as the argument object has.
+
+      </p>
+
+      <h3>Project: Electronic Life(Chapter 7)</h3>
+      <p>
+        <strong>Note</strong> that when we have a function embeded in another function, the inner function does not get to share this with outter function. The words from book is<strong> " In fact, when a function isn’t called as a method, this will refer to the global object."</strong> To do so we need to assign the outter this to a variable so we can use it any where. Or JS provides a method bind method to be applyed on the end of inner function, with argument (this) inside parenthises. This method bind the outer this to the inner function so you can use this to refer outter function scope and use it inside inner function. Good thing about arrays higher order funcitons like forEach, map, etc. They optionaly take second argument, we can pass this to the second argument of those function calls, without having to use bind(this) method.<br>
+
+        <strong>Array.indexOf()</strong>: returns -1 when it is not included in this array.<br>
+
+        <strong>Function.call(this, arg1, arg2)</strong>: This method chains the constructor function and initializes the constructor functions initialization.<br>
+      </p>
+
+
+
+   </main>
+
+
+<!--   <div id="bottom-nav">
+    <ul>
+      <li><button type="button" class="btn btn-default"><a href="">Last Post</a></button></li>
+      <li><button id="right" type="button" class="btn btn-default"><a href="">Next Post</a></button></li>
+    </ul>
+  </div>
+ </div> -->
+   <footer>
+    <p>Contact me: <a href="mailto:ouchunyu@yahoo.com">ouchunyu@yahoo.com</a> </p>
+   </footer>
+</body>
+</html>
