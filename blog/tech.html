@@ -47,7 +47,7 @@
     <hr>
     <h2>Test-Driven Development with Rails</h2>
     <p>
-      As we are studying at DBC, we will be majorly focusing on Ruby, and for Web development, we have Ruby on Rails as a very popular and handy framework. There are many good reason why its got popular. From my experiences with Rails, it is fast, productive and it helps you build  RESTful API quickly in a world RESTful standard, better more, it is designed with TDD concepts in mind. I have not been in programming for very long, i have to say i am pretty much a newbie. But i really like TDD and have been using it every since i learnt how to write a test. No test no go. As we will be focusing on RoR in DBC study, i will put TDD as my focus, but before that, lets go thru Rails official guid to testing Rails apps.
+      As we are studying at DBC, we will be majorly focusing on Ruby, and for Web development, we have Ruby on Rails as a very popular and handy framework. There are many good reason why its got popular. From my experiences with Rails, it is fast, productive and it helps you build  RESTful API quickly in a world RESTful standard, better more, it is designed with TDD concepts in mind. I have not been in programming for very long, i have to say i am pretty much a newbie. But i really like TDD and have been trying to use it every since i learnt how to write a test, althoug it is very hard as begining with limited Ruby knowledge and it is still not as good as i want to. I say No test no go, I like TDD, but it is not an abusolute way to write code, it is just a good way, but for writing Rails apps i really like coding this way. As we will be focusing on RoR in DBC study, i will put TDD as my main focus and main way to write Rails apps, but before that, lets go thru Rails official guid to testing Rails apps.
     </p>
     <p>
       As learning Ruby, Rubydoc is always the place to go, it is well documented. Do you know actually Rails as well, no need to learn with some online tutorial, you have it here on its official site, and it covers everything that you ever need to know about Rails, documents, source code, API and tutorial to get you started.<br>
@@ -56,6 +56,257 @@
     <p>
       By default when you use common <code>rails generate new app_name</code> in your shell, rails generate 3 standard environments: development, production and test. All their config info are store in <code>config/database.yml</code> file. By default when you use common in your shell, rails generate 3 standard environments: development, production and test. All their config info are store in. As well as 3 separated databases for them. This means when we are testing a rails app we are totally running a fresh, isolated database, that is designed and intended for testing. When you run on such database, any stored data in, let say development environment is not involved, so we can totally mess around with database, test customer models, do integration test, and more with confidence.
     </p>
+    <p>
+      After you have created your new app with command mentioned above, you should see rails generated many directories, there is one dedicated to Test, Inside test directory there are many directories with same names as all other components rails have generated, which means rails created test files for pretty much everything it has created. Which represents the TDD principle, you need to test EVERYTHING. Note there is a directory called fixture, it contains test environment data. It is a great way to organize data we are going to use, how? Here is how it works, we are going to write some data and store in fixtures, when we run our test, fixture is going to throw the data in our test environment database, so we will have some data in database to test all the functionalities we give to this app, good stuff.
+    </p>
+    <p>
+      Those data for testing are stored in files with .yml extension. They are YAML files, YAML means YAML Ain’t Markup Language. You can store data in such file like this:
+      <pre><code>
+        chunyu:
+          name: 'Chunyu'
+          age: 24
+          sex: 'male'
+          country: 'China'
+      </code></pre>
+      You then can access data like this:
+      <pre><code>
+        @user = users(:chunyu)
+        puts @user.name         # Chunyu
+        puts @user.age          # 24
+        puts @uesr.country      # China
+      </code></pre>
+      The reason we can use the data this is because those data are ActiveRecord objects in Rails.
+      The best thing is that you can use ERB inside fixture files. ERB represents embedded Ruby. What it does is here on <a href="http://ruby-doc.org/stdlib-2.3.0/libdoc/erb/rdoc/ERB.html">RubyDoc</a>. This allows us to use Ruby code inside a fixture file! So, with those handy stuff in hand there is not reason why you don't write tests! Rails and ActiveRecord together have made it so easy for you. <em>WRITE TEST!</em>
+    </p>
+
+    <p>
+      Now, lets look at the rest of those directories and see what tests we need to put inside them. First, controllers tests. A controller is a class where you defines actions for corresponding routes, so here you are going to write tests for those classes, make sure they work correctly. Note when you go to pretty much any of those test files, you will see <code>require 'test_helper'</code> This loads a helper file inside this test directory along with other directories, it contains helper methods for all tests. Now, when you are inside a test file, you should also see class name as the file name that Rails automatically organized for you, just write test then, how easy. In rails way, you have a helper method call test, you use it this way:
+      <pre><code>
+test "true is true" do   # same as =>=>=>   def test_true_is_true
+  assert true                                  assert true
+end                                         end
+      </code></pre>
+      That's easy, then most of assertions are same as you commonly see in Ruby. Here is a list of all assertions work in Rails tests.
+    </p>
+    <table class="table table-bordered">
+    <thead>
+    <tr>
+    <th>Assertion</th>
+    <th>Purpose</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><code>assert( test, [msg] )</code></td>
+    <td>Ensures that <code>test</code> is true.</td>
+    </tr>
+    <tr>
+    <td><code>assert_not( test, [msg] )</code></td>
+    <td>Ensures that <code>test</code> is false.</td>
+    </tr>
+    <tr>
+    <td><code>assert_equal( expected, actual, [msg] )</code></td>
+    <td>Ensures that <code>expected == actual</code> is true.</td>
+    </tr>
+    <tr>
+    <td><code>assert_not_equal( expected, actual, [msg] )</code></td>
+    <td>Ensures that <code>expected != actual</code> is true.</td>
+    </tr>
+    <tr>
+    <td><code>assert_same( expected, actual, [msg] )</code></td>
+    <td>Ensures that <code>expected.equal?(actual)</code> is true.</td>
+    </tr>
+    <tr>
+    <td><code>assert_not_same( expected, actual, [msg] )</code></td>
+    <td>Ensures that <code>expected.equal?(actual)</code> is false.</td>
+    </tr>
+    <tr>
+    <td><code>assert_nil( obj, [msg] )</code></td>
+    <td>Ensures that <code>obj.nil?</code> is true.</td>
+    </tr>
+    <tr>
+    <td><code>assert_not_nil( obj, [msg] )</code></td>
+    <td>Ensures that <code>obj.nil?</code> is false.</td>
+    </tr>
+    <tr>
+    <td><code>assert_empty( obj, [msg] )</code></td>
+    <td>Ensures that <code>obj</code> is <code>empty?</code>.</td>
+    </tr>
+    <tr>
+    <td><code>assert_not_empty( obj, [msg] )</code></td>
+    <td>Ensures that <code>obj</code> is not <code>empty?</code>.</td>
+    </tr>
+    <tr>
+    <td><code>assert_match( regexp, string, [msg] )</code></td>
+    <td>Ensures that a string matches the regular expression.</td>
+    </tr>
+    <tr>
+    <td><code>assert_no_match( regexp, string, [msg] )</code></td>
+    <td>Ensures that a string doesn't match the regular expression.</td>
+    </tr>
+    <tr>
+    <td><code>assert_includes( collection, obj, [msg] )</code></td>
+    <td>Ensures that <code>obj</code> is in <code>collection</code>.</td>
+    </tr>
+    <tr>
+    <td><code>assert_not_includes( collection, obj, [msg] )</code></td>
+    <td>Ensures that <code>obj</code> is not in <code>collection</code>.</td>
+    </tr>
+    <tr>
+    <td><code>assert_in_delta( expecting, actual, [delta], [msg] )</code></td>
+    <td>Ensures that the numbers <code>expected</code> and <code>actual</code> are within <code>delta</code> of each other.</td>
+    </tr>
+    <tr>
+    <td><code>assert_not_in_delta( expecting, actual, [delta], [msg] )</code></td>
+    <td>Ensures that the numbers <code>expected</code> and <code>actual</code> are not within <code>delta</code> of each other.</td>
+    </tr>
+    <tr>
+    <td><code>assert_throws( symbol, [msg] ) { block }</code></td>
+    <td>Ensures that the given block throws the symbol.</td>
+    </tr>
+    <tr>
+    <td><code>assert_raises( exception1, exception2, ... ) { block }</code></td>
+    <td>Ensures that the given block raises one of the given exceptions.</td>
+    </tr>
+    <tr>
+    <td><code>assert_nothing_raised( exception1, exception2, ... ) { block }</code></td>
+    <td>Ensures that the given block doesn't raise one of the given exceptions.</td>
+    </tr>
+    <tr>
+    <td><code>assert_instance_of( class, obj, [msg] )</code></td>
+    <td>Ensures that <code>obj</code> is an instance of <code>class</code>.</td>
+    </tr>
+    <tr>
+    <td><code>assert_not_instance_of( class, obj, [msg] )</code></td>
+    <td>Ensures that <code>obj</code> is not an instance of <code>class</code>.</td>
+    </tr>
+    <tr>
+    <td><code>assert_kind_of( class, obj, [msg] )</code></td>
+    <td>Ensures that <code>obj</code> is or descends from <code>class</code>.</td>
+    </tr>
+    <tr>
+    <td><code>assert_not_kind_of( class, obj, [msg] )</code></td>
+    <td>Ensures that <code>obj</code> is not an instance of <code>class</code> and is not descending from it.</td>
+    </tr>
+    <tr>
+    <td><code>assert_respond_to( obj, symbol, [msg] )</code></td>
+    <td>Ensures that <code>obj</code> responds to <code>symbol</code>.</td>
+    </tr>
+    <tr>
+    <td><code>assert_not_respond_to( obj, symbol, [msg] )</code></td>
+    <td>Ensures that <code>obj</code> does not respond to <code>symbol</code>.</td>
+    </tr>
+    <tr>
+    <td><code>assert_operator( obj1, operator, [obj2], [msg] )</code></td>
+    <td>Ensures that <code>obj1.operator(obj2)</code> is true.</td>
+    </tr>
+    <tr>
+    <td><code>assert_not_operator( obj1, operator, [obj2], [msg] )</code></td>
+    <td>Ensures that <code>obj1.operator(obj2)</code> is false.</td>
+    </tr>
+    <tr>
+    <td><code>assert_predicate ( obj, predicate, [msg] )</code></td>
+    <td>Ensures that <code>obj.predicate</code> is true, e.g. <code>assert_predicate str, :empty?</code>
+    </td>
+    </tr>
+    <tr>
+    <td><code>assert_not_predicate ( obj, predicate, [msg] )</code></td>
+    <td>Ensures that <code>obj.predicate</code> is false, e.g. <code>assert_not_predicate str, :empty?</code>
+    </td>
+    </tr>
+    <tr>
+    <td><code>assert_send( array, [msg] )</code></td>
+    <td>Ensures that executing the method listed in <code>array[1]</code> on the object in <code>array[0]</code> with the parameters of <code>array[2 and up]</code> is true. This one is weird eh?</td>
+    </tr>
+    <tr>
+    <td><code>flunk( [msg] )</code></td>
+    <td>Ensures failure. This is useful to explicitly mark a test that isn't finished yet.</td>
+    </tr>
+    <tr>
+    <td><code>assert_difference(expressions, difference = 1, message = nil) {...}</code></td>
+    <td>Test numeric difference between the return value of an expression as a result of what is evaluated in the yielded block.</td>
+    </tr>
+    <tr>
+    <td><code>assert_no_difference(expressions, message = nil, &amp;amp;block)</code></td>
+    <td>Asserts that the numeric result of evaluating an expression is not changed before and after invoking the passed in block.</td>
+    </tr>
+    <tr>
+    <td><code>assert_recognizes(expected_options, path, extras={}, message=nil)</code></td>
+    <td>Asserts that the routing of the given path was handled correctly and that the parsed options (given in the expected_options hash) match path. Basically, it asserts that Rails recognizes the route given by expected_options.</td>
+    </tr>
+    <tr>
+    <td><code>assert_generates(expected_path, options, defaults={}, extras = {}, message=nil)</code></td>
+    <td>Asserts that the provided options can be used to generate the provided path. This is the inverse of assert_recognizes. The extras parameter is used to tell the request the names and values of additional request parameters that would be in a query string. The message parameter allows you to specify a custom error message for assertion failures.</td>
+    </tr>
+    <tr>
+    <td><code>assert_response(type, message = nil)</code></td>
+    <td>Asserts that the response comes with a specific status code. You can specify <code>:success</code> to indicate 200-299, <code>:redirect</code> to indicate 300-399, <code>:missing</code> to indicate 404, or <code>:error</code> to match the 500-599 range. You can also pass an explicit status number or its symbolic equivalent. For more information, see <a href="http://rubydoc.info/github/rack/rack/master/Rack/Utils#HTTP_STATUS_CODES-constant">full list of status codes</a> and how their <a href="http://rubydoc.info/github/rack/rack/master/Rack/Utils#SYMBOL_TO_STATUS_CODE-constant">mapping</a> works.</td>
+    </tr>
+    <tr>
+    <td><code>assert_redirected_to(options = {}, message=nil)</code></td>
+    <td>Assert that the redirection options passed in match those of the redirect called in the latest action. This match can be partial, such that <code>assert_redirected_to(controller: "weblog")</code> will also match the redirection of <code>redirect_to(controller: "weblog", action: "show")</code> and so on. You can also pass named routes such as <code>assert_redirected_to root_path</code> and Active Record objects such as <code>assert_redirected_to @article</code>.</td>
+    </tr>
+    <tr>
+    <td><code>assert_template(expected = nil, message=nil)</code></td>
+    <td>Asserts that the request was rendered with the appropriate template file.</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>That was a lot, but good to know.</p>
+    <p>
+      What do we test? Good question. Here is a list of things we commonly test:
+      <ul>
+      <li>was the web request successful?</li>
+      <li>was the user redirected to the right page?</li>
+      <li>was the user successfully authenticated?</li>
+      <li>was the correct object stored in the response template?</li>
+      <li>was the appropriate message displayed to the user in the view?</li>
+      </ul>
+      <p>With those question in mind, and all those tools in mind, you are able to test. You might want to read few times on this list of questions, then next time when you want to test first as TDD, you will not want to write.</p>
+      Now let's look at how you would write test for those questions in rails. Let's say you have html page index an is under controller User, then you just go that controller test file and write code like this to check if this index page will be render properly:
+      <pre><code>
+        class ArticlesControllerTest < ActionController::TestCase
+          test 'should render index page' do
+            get :index
+            assert_response :success
+            assert_not_nil assigns(:user)
+          end
+        end
+
+      </code></pre>
+      get is a method that works like get in http request, so get symbol index you are sending request to get index page, assert_response :success indicates if the request succeed, true pass, rais an error otherwise. assert_not_nil is testing if assigns method is nil or not. Not assigns(:symbol_name) is a very helpful method that you pass an instance variable in a symbol form, this instance variable is shown in your controller under same action that controlls this index page. By doing so you have the access to what data this instance variable holds.<br>
+      Here is a list of all requests you can use for test:
+      <ul>
+        <li>get</li>
+        <li>post</li>
+        <li>patch</li>
+        <li>put</li>
+        <li>head</li>
+        <li>delete</li>
+      </ul>
+    </p>
+    <p>
+      There some methods i like to use such <code>as assert_select</code> this works very well when testing page elements:
+      <pre><code>
+        assert_select 'h1.page_title', text: "Welcome to my site", count: 1
+      </code></pre>
+      what it does is, assertion tests on the page you are testing, if there is a html tage h1 with class attribute 'page_title', and content is "Welcome to my site" and it shows up in the page exactly once. It is quit powerful, pretty much every element you can test. You can also combine it with loop methods if you have data testing, to make sure all data are on the page, like this:
+      <pre><code>
+        @data          # assume this holds an array of names
+
+        test 'all names appear on index page' do
+          get :index
+          assert_template 'users/index'
+          @data.each do |name|
+            assert_select 'li.user_name', text: name
+          end
+        end
+      </code></pre>
+      This testing all the names with list tage and class name user_name. The second assertion is testing if the template file correctly rendered, 'users/index' is file path.
+    </p>
+
+
+
 
 
 
