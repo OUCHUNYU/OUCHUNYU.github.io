@@ -133,18 +133,47 @@ Object.create(aObjectName) //This method create a new object with protoype of th
         <strong>Function.call(this, arg1, arg2)</strong>: This method chains the constructor function and initializes the constructor functions initialization.<br>
       </p>
 
+      <h3>Bugs And Error Handling(Chapter 8)</h3>
+      <p>
+        When using constructor function without having <strong>new</strong> in front of it, JS will still create stuff, but this time, properties created by <strong>this</strong> going to be a global property(variable), because this then refers to <strong>window</strong> top level object.<br>
+        By writing 'use strict' on the top of a program, we ask console to run our code in a strict model, so it will give us errors.<br>
+        <strong>Exceptions</strong>: Code that runs into a problem to raise(throw) an exception, which is a value in JavaScript. Raising an exception is like calling a powerful return which returns all the way to the caller where the stack starts off. This way of return also called <strong>unwinding the stack</strong><br>
+        Using <strong>catch</strong> to catch an exception and do something with it, then program will start running code from that point where exception was caught.<br>
+        <strong>throw</strong> is used to raise an exception, follow throw is a <strong>new Error(message)</strong><br>
+        <strong>try</strong> is where we run the code that we think the exception should appear<br>
+        <strong>catch(error)</strong> follow right after <strong>try { }</strong> and pass the error object and do something inside the block { }<br>
+        Error constructor create an object with a <strong>message</strong> property and it also gather info where the problem is returned, and save the info to <strong>stack</strong> property. Common JS error constructors all have <strong>name</strong> property which refers to the name of this constructor. We can return stack property for debugging<br>
+        <strong>finally</strong> works like <strong>ensure</strong> claus in Ruby, which will excute its block no matter what.<br>
+        In JS exception handeling recognize all errors as errors, which can be very confusing sometimes, if we want to specify error handling we can make our own exception constructor and inherite prototype from Erro constructor, and use if else claues in catch to catch our exception only.<br>
+        creating assertions is helpful, it just simply blow up our program so we will fix problems.<br>
+      </p>
+
+      <h3>Regular Expressions(Chapter 9)</h3>
+      <p>
+        A regular expression is a type of object in JS<br>
+        <strong>test()</strong>: method takes a string argument and being applyed on to a regular expression object. <pre><code>console.log(/\d{3}/.test("333")); // true</code></pre>
+        <strong>exec()</strong>: this method sligly different, it returns null for unmatched, return an object with matched information. It also provides an index property tells us where in the string it was matched. String values has a method match( regx ) works the same way
+        <strong>Date()</strong>: constructor function which takes nothing and returns a time object to indicates the time for now. <code>new Date()</code> , we can also pass numbers as arguments to parse the number to time object. <code>console.log(new Date(2012, 2, 10));</code>.<br>
+        <strong>getTime()</strong>: works on Date object and returns a millisecond count fron 1970<br>
+        <strong>getFullYear()</strong>: returns full year.<br>
+        <strong>getMonth()</strong>:<br>
+        <strong>getDate()</strong>:<br>
+        <strong>getHours()</strong>:<br>
+        <strong>getMinutes()</strong>:<br>
+        <strong>getSeconds()</strong>:<br>
+        <strong>replace()</strong>: String method to replace first match <code>'papa'.replace('p', 'd'); </code>first argument can be used as regular expression <code>'papa'.replace(/[p]/, 'd');</code> It is also possible to pass a funciton as second argument its return value will be inserted into string<br>
+        <strong>RegExp()</strong>: constructor for regular expression. Take a string regular expression as first argument the second arg is flag argument, we can pass in things like i, g, etc<br>
+        <strong>search()</strong>: takes regular expressions and return the matching index of a string or returning -1 when nothing found.
+        <strong>lastIndex()</strong>: returns the last match index of a regualr expression
+
+      </p>
+
 
 
    </main>
 
 
-<!--   <div id="bottom-nav">
-    <ul>
-      <li><button type="button" class="btn btn-default"><a href="">Last Post</a></button></li>
-      <li><button id="right" type="button" class="btn btn-default"><a href="">Next Post</a></button></li>
-    </ul>
-  </div>
- </div> -->
+ </div>
    <footer>
     <p>Contact me: <a href="mailto:ouchunyu@yahoo.com">ouchunyu@yahoo.com</a> </p>
    </footer>
