@@ -221,6 +221,45 @@ Object.create(aObjectName) //This method create a new object with protoype of th
         <li>arrays are false when compared with ===</li>
         <li>The falsey values are the empty string, 0, the keyword false, undefined, and null. In a boolean context, falsey values are treated as false (falsey values don't necessarily equal false).</li>
         <li>when define a variable inside a function(local scope) with no var keyword it is then a global variable and accessible anywhere.</li>
+        <li>When this is invoked inside an open function not in a method, it refers to window object</li>
+        <li>JS design quirk, inner function this points to the window global object, consider following code:
+          <pre><code>
+            var haha = {
+              lala: function() {
+                function dada() {
+                  return this === window;
+                }
+                return dada();
+              }
+            }
+
+            console.log(haha.lala());  // true
+          </code></pre></li>
+        <li>functions have name a property which returns a string of the name of this function. The name for anonymous function is ''</li>
+        <li>arguments object is array like but it is not an arary, so can not use forEach such array methods</li>
+        <li>apply vs. call: consider following code:
+          <pre><code>
+            var me = {
+              name: 'Chunyu',
+              country: 'China',
+              age: 24
+            }
+
+            function intro(num1, num2, num3) {
+              return 'hi, I'm ' + this.name + " from " + this.country + ' ' + (num1 + num2 + num3);
+            }
+
+            // calling apply
+            console.log(intro.apply(me, [1, 2, 3]));
+            // "hi, I'm Chunyu from China 6"
+
+            // calling call
+            console.log(intro.call(me, 1, 2, 3));
+            // "hi, I'm Chunyu from China 6"
+          </code></pre></li>
+        <li>Object values are typically anonymous functions, but they can also be named functions. A named function works well to allow for recursion.</li>
+        <li>functions are objects and can be assigned properties just like normal objects</li>
+        <li>functions have length property to refer the length of params</li>
       </ul>
 
 
