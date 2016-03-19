@@ -168,6 +168,61 @@ Object.create(aObjectName) //This method create a new object with protoype of th
 
       </p>
 
+      <h3>Modules(Chapter 10)</h3>
+      <p>
+        when making modules conventionaly we can excute an anonymous function which we can pass in an exported object and add properties inside calling function to that object instead having to return many function definitions.<br>
+        Modules:
+        <ul>
+          <li>by wrapping all the scuttered code together and include them inside an object.(browser approach)</li>
+          <li>by using require('fileName') and assign to a variable we get to use the moduel files after loading. This style is called CommonJS</li>
+          <li>Another solution is to wrap the code that makes up your module in a function so that the module loader can first load its dependencies in the background and then call the function, initializing the module, when the dependencies have been loaded. This style is called AMD</li>
+        </ul>
+        <pre><code>
+          define(["weekDay", "today"], function(weekDay, today) {
+            console.log(weekDay.name(today.dayNumber()));
+          });
+        </code></pre>
+        The modules that are loaded this way must themselves contain a call to define function like this:
+        <pre><code>
+          define([], function() {
+            return {
+              hello: function() {
+                console.log('hello');
+              },
+              goodbye: function() {
+                console.log('goodbye');
+              }
+            };
+          });
+        </code></pre>
+        Unlike CommonJS, AMD takes a browser-first approach alongside asynchronous behavior to get the job done.<br>
+        Overall: CommonJS Modules and revolves around a require function that fetches a module by name and returns its interface. The other is called AMD and uses a define function that takes an array of module names and a function and, after loading the modules, runs the function with their interfaces as arguments.<br>
+        <strong>eval(stringObject)</strong> : takes a string of code and excutes it as JS code.<br>
+        <strong>Function()</strong> : While eval is good but sometimes it breaks the scopes. We can use Function() constructor which takes 2 string arguments. First argument is comma seperated list of arugments, the second argument is a string of function body. like this:
+        <pre><code>
+          var myFunction = new Function('x, y', 'return x + y;');
+          console.log(myFunction(5, 6));
+          // 11
+        </code></pre>
+      </p>
+
+      <h3>I did a little quizz and here is what i found as reflections of learning JS</h3>
+      <ul>
+        <li>JavaScript has the same data type for integer and float</li>
+        <li>integer divided by 0 returns infinity</li>
+        <li>when divide a integer by non-numeric object JS doesn't return error instead it returns NaN(Not a Number)</li>
+        <li>NaN is not equal to another value, including itself</li>
+        <li>typeof(NaN) is number.</li>
+        <li>when define a variable with no value, it returns undefined because its value is undefined</li>
+        <li>JS can concatenate number and string with + but it converts the number to string first then concat</li>
+        <li>JS can do math with a string and a number, but it converts the string to number first then do math</li>
+        <li>empty string considered falsey</li>
+        <li>typeof an array returns 'object'</li>
+        <li>arrays are false when compared with ===</li>
+        <li>The falsey values are the empty string, 0, the keyword false, undefined, and null. In a boolean context, falsey values are treated as false (falsey values don't necessarily equal false).</li>
+        <li>when define a variable inside a function(local scope) with no var keyword it is then a global variable and accessible anywhere.</li>
+      </ul>
+
 
 
    </main>
