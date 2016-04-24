@@ -1,0 +1,42 @@
+h1{
+  font-family: 'Audiowide', cursive;
+  color: #0000ff;
+}
+
+#board {
+  background-color: #ffff66;
+  margin: 20px;
+
+}
+
+.column {
+  width: 14%;
+  display: inline-block;
+}
+
+.board {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  margin: 10px;
+}
+
+/*.board:hover {
+  background-color: #0000ff;
+}*/
+
+.hover{
+  background-color: #0000ff;
+}
+
+.blank {
+  background-color: white;
+}
+
+.red {
+  background-color: red;
+}
+
+.black {
+  background-color: black;
+}
