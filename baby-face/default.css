@@ -1,5 +1,5 @@
 #header-link {
-  color: black;
+  color: #262626;
 }
 
 #header-link:hover {
@@ -39,7 +39,9 @@ body {
   padding-top: 1.5em;
 }
 
-
+ul#mylinks li a {
+  color: #262626;
+}
 
 
 
