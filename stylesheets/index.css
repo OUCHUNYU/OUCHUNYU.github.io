@@ -1,0 +1,41 @@
+* {
+	font-family: 'Muli', sans-serif;
+}
+
+.my-photo-container {
+	width: 300px;
+}
+
+.my-photo {
+	width: 70%;
+	padding-right: 0px;
+}
+
+.flex-row-container-center {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.flex-row-item-center {
+	align-self: center;
+}
+
+.flex-column-container-center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
