@@ -11,6 +11,19 @@
 	padding-right: 0px;
 }
 
+.about-me {
+	padding-left: 20%;
+	padding-right: 20%;
+	font-size: 1.2em;
+}
+
+@media (max-width: 870px) {
+	.about-me {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
 .flex-row-container-center {
 	display: flex;
 	flex-direction: row;
